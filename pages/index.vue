@@ -53,7 +53,7 @@
               <h1 class="text-xl font-bold">ตัวอย่างภาพ</h1>
             </template>
             <section ref="imgElement" class="relative mx-auto flex h-fit w-full items-center justify-center">
-              <div class="absolute top-1/2 z-10 text-wrap break-words px-20 text-center text-xs font-bold text-red-600 sm:text-2xl">
+              <div class="absolute top-1/2 z-10 text-balance break-words px-20 text-center text-xs font-bold text-red-600 sm:text-2xl">
                 <h1 class="text-lg sm:text-4xl" v-if="selected">{{ headerText }}</h1>
                 <span>{{ state.statusText ? state.statusText : "เนื่องจาก..." }}</span>
               </div>
