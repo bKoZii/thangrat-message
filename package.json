@@ -1,0 +1,28 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@iconify-json/ph": "^1.1.13",
+    "@nuxt/devtools": "latest",
+    "@nuxt/ui": "^2.17.0",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "nuxt": "^3.12.4",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.5"
+  },
+  "dependencies": {
+    "@nuxt/image": "^1.7.0",
+    "@nuxt/kit": "^3.12.4",
+    "copy-image-clipboard": "^2.1.2",
+    "html-to-image": "^1.11.11",
+    "zod": "^3.23.8"
+  }
+}
