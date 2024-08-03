@@ -3,7 +3,7 @@
     <div
       class="bg-primary-800 fixed inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:42px_42px] dark:bg-neutral-950"
     ></div>
-    <UContainer class="w-screen max-w-[900px] py-5">
+    <UContainer class="w-screen max-w-[900px] p-3 sm:p-5">
       <div class="flex w-full flex-col gap-3">
         <UCard>
           <template #header>
@@ -15,11 +15,11 @@
           <div>
             <UForm :state="state" :schema="schema" class="space-y-3">
               <UCheckbox v-model="selected" name="notifications" label="แสดงหัวเรื่อง " />
-              <UFormGroup label="หัวเรื่อง">
-                <UInput v-model="headerText" :disabled="!selected" label="ข้อความหัวเรื่อง" />
+              <UFormGroup label="หัวเรื่อง" v-if="selected">
+                <UInput v-model="headerText" label="ข้อความหัวเรื่อง" />
               </UFormGroup>
               <UFormGroup label="ข้อความของคุณ" name="statusText" required eager-validation>
-                <UInput placeholder="ป้อนข้อความ" v-model="state.statusText" size="lg" max="20" />
+                <UInput placeholder="ป้อนข้อความ" v-model="state.statusText" />
               </UFormGroup>
 
               <ClientOnly>
@@ -53,9 +53,9 @@
               <h1 class="text-xl font-bold">ตัวอย่างภาพ</h1>
             </template>
             <section ref="imgElement" class="relative mx-auto flex h-fit w-full items-center justify-center">
-              <div class="absolute top-1/2 z-10 text-balance break-words px-20 text-center text-xs font-bold text-red-600 sm:text-2xl">
+              <div class="absolute top-1/2 z-10 text-balance break-words px-8 sm:px-12 text-center text-xs font-bold text-red-600 sm:text-2xl">
                 <h1 class="text-lg sm:text-4xl" v-if="selected">{{ headerText }}</h1>
-                <span>{{ state.statusText ? state.statusText : "เนื่องจาก..." }}</span>
+                <p class="mt-3 font-medium">{{ state.statusText ? state.statusText : "เนื่องจาก..." }}</p>
               </div>
               <NuxtImg class="" width="100%" height="100%" src="/mainImage.png" />
             </section>
