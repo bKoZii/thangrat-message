@@ -47,23 +47,18 @@
             </UForm>
           </div>
         </UCard>
-        <UCard>
-          <ClientOnly>
-            <template #header>
-              <h1 class="text-xl font-bold">ตัวอย่างภาพ</h1>
-            </template>
-            <section ref="imgElement" class="relative mx-auto flex h-fit w-full items-center justify-center">
-              <div class="absolute top-1/2 z-10 text-balance break-words px-8 sm:px-12 text-center text-xs font-bold text-red-600 sm:text-2xl">
-                <h1 class="text-lg sm:text-4xl" v-if="selected">{{ headerText }}</h1>
-                <p class="mt-3 font-medium">{{ state.statusText ? state.statusText : "เนื่องจาก..." }}</p>
-              </div>
-              <NuxtImg class="" width="100%" height="100%" src="/mainImage.png" />
-            </section>
-            <template #fallback>
-              <span>Loading...</span>
-            </template>
-          </ClientOnly>
-        </UCard>
+        <ClientOnly>
+          <section ref="imgElement" class="relative mx-auto flex h-fit w-full items-center justify-center">
+            <div class="absolute top-1/2 z-10 text-balance break-words px-8 text-center text-xs font-bold text-red-600 sm:px-12 sm:text-2xl">
+              <h1 class="text-lg sm:text-4xl" v-if="selected">{{ headerText }}</h1>
+              <p class="mt-3 font-medium">{{ state.statusText ? state.statusText : "เนื่องจาก..." }}</p>
+            </div>
+            <NuxtImg class="" width="100%" height="100%" src="/mainImage.png" />
+          </section>
+          <template #fallback>
+            <span>Loading...</span>
+          </template>
+        </ClientOnly>
         <Footer />
       </div>
     </UContainer>
