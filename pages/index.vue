@@ -127,4 +127,25 @@ const schema = z.object({
 const state = reactive({
   statusText: "เนื่องจาก...",
 })
+
+useSeoMeta({
+    title: pageTitle,
+    ogTitle: pageTitle,
+    ogDescription: "Custom ข้อความ 'ท่านไม่มีสิทธิ์' จากแอพทางรัฐ ได้ตามใจ! ",
+    description: "Custom ข้อความ 'ท่านไม่มีสิทธิ์' จากแอพทางรัฐ ได้ตามใจ! ",
+    ogImage: "/mainLogo.png",
+    ogUrl: "https://thangrat.konkamon.live"
+})
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: '/mainLogo.png'
+    }
+  ]
+})
 </script>

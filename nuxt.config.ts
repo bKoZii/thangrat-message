@@ -6,6 +6,15 @@ export default defineNuxtConfig({
   tailwindcss:{
     configPath: 'tailwind.config.ts'
   },
+  app:{
+    head:{
+      htmlAttrs:{
+        lang: 'th'
+      },
+      viewport: 'width=device-width, initial-scale=1',
+      link: [{ rel: 'icon', type: 'image/png', href: '/mainLogo.png' }]
+    }
+  },
 
   ssr: true,
   googleFonts: {
