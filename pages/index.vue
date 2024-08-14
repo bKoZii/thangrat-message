@@ -67,7 +67,7 @@
 </template>
 
 <script setup lang="ts">
-const headerText = ref("ท่านไม่มีสิทธิ์")
+const headerText = ref("ขออภัย โครงการนี้กำลังจะถูกยกเลิก")
 const statusText = ref("เนื่องจาก...")
 const isLoading = ref(false)
 const imgElement = ref<HTMLElement>()
@@ -110,7 +110,7 @@ const copyImage = async () => {
         const img = new Image()
         img.src = dataUrl
         copyImageToClipboard(img.src)
-        toast.add({ title: "คัดลอกรูปภาพสำเร็จ" })
+        toast.add({ title: "คัดลอกรูปภาพสำเร็จ", description: `ข้อความ: ${state.statusText}`, icon: "ph:clipboard-duotone" })
       })
       .catch((error) => {
         console.error("oops, something went wrong!", error)
